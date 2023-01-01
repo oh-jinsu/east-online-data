@@ -1,0 +1,9 @@
+!Simple
+id: tile_003
+texture:
+  top: 3
+  bottom: 3
+  left: 3
+  right: 3
+  front: 3
+  back: 3

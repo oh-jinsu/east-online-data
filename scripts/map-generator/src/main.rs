@@ -1,27 +1,42 @@
+use std::collections::BTreeMap;
+
 use chrono::Utc;
-use map_generator::{Map, Tile};
+use goguryeo_core::data::{Map, Placable};
+use map_generator::map::generate_file;
 
 fn main() {
     let version = format!("{}", Utc::now().format("%FT%XZ"));
 
     {
-        let map = Map::builder()
-            .set_id("map_0000")
-            .set_name("map_1")
-            .set_tiles(Tile::new("tile_000").repeat(64, 1, 64))
-            .build(&version);
+        let map = Map {
+            id: "map_0000".to_string(),
+            name: "map_1".to_string(),
+            tiles: Placable {
+                id: "tile_000".to_string(),
+                rotation: 0,
+            }
+            .repeat(64, 1, 64),
+            objects: BTreeMap::new(),
+            version: version.to_string(),
+        };
 
-        map.generate_file("../../maps");
+        generate_file(&map, "../../maps");
     }
 
     {
-        let map = Map::builder()
-            .set_id("map_0001")
-            .set_name("map_2")
-            .set_tiles(Tile::new("tile_000").repeat(32, 1, 32))
-            .build(&version);
+        let map = Map {
+            id: "map_0001".to_string(),
+            name: "map_2".to_string(),
+            tiles: Placable {
+                id: "tile_000".to_string(),
+                rotation: 0,
+            }
+            .repeat(64, 1, 64),
+            objects: BTreeMap::new(),
+            version: version.to_string(),
+        };
 
-        map.generate_file("../../maps");
+        generate_file(&map, "../../maps");
     }
 
     println!("Maps generated successfully.")

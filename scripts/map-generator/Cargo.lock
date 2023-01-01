@@ -111,6 +111,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "goguryeo_core"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9392582a582ea5a1831e0e0fed22509e75ff464dd1e0ae399f57f290b3d19bc4"
+dependencies = [
+ "serde",
+]
+
+[[package]]
 name = "hashbrown"
 version = "0.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -194,7 +203,7 @@ name = "map_generator"
 version = "0.1.0"
 dependencies = [
  "chrono",
- "serde",
+ "goguryeo_core",
  "serde_yaml",
 ]
 
