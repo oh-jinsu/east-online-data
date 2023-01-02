@@ -1,7 +1,7 @@
 use std::collections::BTreeMap;
 
 use chrono::Utc;
-use goguryeo_core::data::{Map, Placable};
+use east_online_core::data::{Map, Placable};
 use map_generator::map::generate_file;
 
 fn main() {

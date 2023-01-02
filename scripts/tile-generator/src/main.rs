@@ -1,4 +1,4 @@
-use goguryeo_core::data::{Tile, TileTexture};
+use east_online_core::data::{Tile, TileTexture};
 use tile_generator::generate_file;
 
 fn main() {

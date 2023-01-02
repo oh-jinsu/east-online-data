@@ -7,5 +7,5 @@ edition = "2021"
 
 [dependencies]
 serde_yaml = { version = "0.9" }
-goguryeo_core = { version = "0.1.0" }
+east_online_core = { version = "0.1.0" }
 chrono = { version = "0.4.23" }

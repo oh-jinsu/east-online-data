@@ -1,4 +1,4 @@
-use goguryeo_core::data::Tile;
+use east_online_core::data::Tile;
 
 pub fn generate_file(tile: &Tile, path: &str) {
     let id = match tile {

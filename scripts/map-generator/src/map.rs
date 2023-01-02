@@ -1,4 +1,4 @@
-use goguryeo_core::data::Map;
+use east_online_core::data::Map;
 
 pub fn generate_file(map: &Map, path: &str) {
     let path = std::env::current_dir()

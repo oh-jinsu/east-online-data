@@ -111,10 +111,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "goguryeo_core"
+name = "east_online_core"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9392582a582ea5a1831e0e0fed22509e75ff464dd1e0ae399f57f290b3d19bc4"
+checksum = "38c8184b488425224e20bc3b32cc981c623f856a8cf33d36fb94f575e3800635"
 dependencies = [
  "serde",
 ]
@@ -203,7 +203,7 @@ name = "map_generator"
 version = "0.1.0"
 dependencies = [
  "chrono",
- "goguryeo_core",
+ "east_online_core",
  "serde_yaml",
 ]
 
