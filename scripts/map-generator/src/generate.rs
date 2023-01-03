@@ -3,9 +3,7 @@ use std::{
     io::{BufReader, BufWriter, Result},
 };
 
-use east_online_core::data::Map;
-
-use crate::manifest::MapManifestElement;
+use east_online_core::data::{Map, MapManifest, MapManifestItem};
 
 pub fn generate_file(map: &Map, path: &str) -> Result<()> {
     let path = env::current_dir()?.join(format!("{}/{}.yml", path, map.id));
@@ -30,7 +28,7 @@ pub fn generate_manifest(path: &str) -> Result<()> {
 
     let files = fs::read_dir(&path)?;
 
-    let manifest: Vec<MapManifestElement> = files
+    let items: Vec<MapManifestItem> = files
         .filter_map(|file| {
             let file = file.unwrap();
 
@@ -44,7 +42,7 @@ pub fn generate_manifest(path: &str) -> Result<()> {
 
             let map: Map = serde_yaml::from_reader(reader).unwrap();
 
-            let result = MapManifestElement {
+            let result = MapManifestItem {
                 id: map.id,
                 name: map.name,
                 version: map.version,
@@ -53,6 +51,8 @@ pub fn generate_manifest(path: &str) -> Result<()> {
             Some(result)
         })
         .collect();
+
+    let manifest = MapManifest { items };
 
     let path = path.join(name);
 
