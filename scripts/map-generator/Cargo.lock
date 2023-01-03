@@ -204,6 +204,7 @@ version = "0.1.0"
 dependencies = [
  "chrono",
  "east_online_core",
+ "serde",
  "serde_yaml",
 ]
 

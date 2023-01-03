@@ -1,10 +1,12 @@
-use std::collections::BTreeMap;
+use std::{collections::BTreeMap, io};
 
 use chrono::Utc;
 use east_online_core::data::{Map, Placable};
-use map_generator::map::generate_file;
+use map_generator::{generate_file, generate_manifest};
 
-fn main() {
+fn main() -> io::Result<()> {
+    let path = "../../maps";
+
     let version = format!("{}", Utc::now().format("%FT%XZ"));
 
     {
@@ -20,7 +22,7 @@ fn main() {
             version: version.to_string(),
         };
 
-        generate_file(&map, "../../maps");
+        generate_file(&map, path)?;
     }
 
     {
@@ -36,8 +38,12 @@ fn main() {
             version: version.to_string(),
         };
 
-        generate_file(&map, "../../maps");
+        generate_file(&map, path)?;
     }
 
-    println!("Maps generated successfully.")
+    generate_manifest(path)?;
+
+    println!("Maps generated successfully.");
+
+    Ok(())
 }
