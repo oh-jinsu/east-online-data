@@ -112,9 +112,9 @@ dependencies = [
 
 [[package]]
 name = "east_online_core"
-version = "0.1.2"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9a0e1c23baa86f230a5220aa5ae2600d9e31ee804cb7b3548dc31e6be3792f4a"
+checksum = "bcccafacc05089e2d95c59b53384fd046f430d77688ae868c51f9e5dfcba0ae1"
 dependencies = [
  "serde",
 ]

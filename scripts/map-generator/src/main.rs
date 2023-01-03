@@ -1,7 +1,10 @@
 use std::{collections::BTreeMap, io};
 
 use chrono::Utc;
-use east_online_core::data::{Map, Placable};
+use east_online_core::{
+    data::{Map, Placable},
+    models::Rotation,
+};
 use map_generator::{generate_file, generate_manifest};
 
 fn main() -> io::Result<()> {
@@ -15,7 +18,7 @@ fn main() -> io::Result<()> {
             name: "map_1".to_string(),
             tiles: Placable {
                 id: "tile_000".to_string(),
-                rotation: 0,
+                rotation: Rotation::Down,
             }
             .repeat(64, 1, 64),
             objects: BTreeMap::new(),
@@ -31,7 +34,7 @@ fn main() -> io::Result<()> {
             name: "map_2".to_string(),
             tiles: Placable {
                 id: "tile_000".to_string(),
-                rotation: 0,
+                rotation: Rotation::Down,
             }
             .repeat(64, 1, 64),
             objects: BTreeMap::new(),
